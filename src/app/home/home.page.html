@@ -1,41 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Voice Recorder
+      Demo App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="startRecording()">Start</ion-button>
-  <ion-button (click)="pauseRecording()">Pause</ion-button>
-  <ion-button (click)="resumeRecording()">Resume</ion-button>
-  <ion-button (click)="stopRecording()">Stop</ion-button>
 
-  <div style="padding: 25px 10px 25px 10px;">
-    <!-- <p *ngIf="recording.status == 1" style="margin: 0px;">
-            <ion-progress-bar value="recording.uploadprogress"></ion-progress-bar>
-          </p> -->
-    <p *ngIf="m_bPlaying" style="margin: 0px;">
-      <ion-range mode="md" color="primary" min="0" max="{{duration}}" [(ngModel)]="playPosition">
-        <ion-label class="ionrange_font" slot="start" *ngIf="playPosition*1000 >= 0">
-          {{ playPosition*1000 | date:'mm:ss':'UTC' }}</ion-label>
-
-        <ion-label class="ionrange_font" slot="start" *ngIf="playPosition*1000 >= 3600000">
-          {{ playPosition*1000 | date:'HH:mm:ss':'UTC' }}</ion-label>
-
-        <ion-label class="ionrange_font" slot="end" *ngIf="duration*1000 >= 0">
-          {{ duration*1000 | date:'mm:ss':'UTC' }}</ion-label>
-
-        <ion-label class="ionrange_font" slot="end" *ngIf="duration*1000 >= 3600000">
-          {{ duration*1000 | date:'HH:mm:ss':'UTC' }}</ion-label>
-      </ion-range>
-    </p>
-  </div>
-
-  <ion-list>
-    <ion-item *ngFor="let file of storedFileNames" (click)="playFile(file)">
-      {{ file }}
-    </ion-item>
-  </ion-list>
 </ion-content>
